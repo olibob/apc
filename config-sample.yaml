@@ -1,0 +1,16 @@
+# SMTP user name and password
+login: "<your google username (me@gmail.com)>"
+password: "<your password or an app password if you use MFA>"
+user-agent: "<the user agent to use>"
+# Email From,To and Subject
+sender: "<from email address>"
+receiver: "to email address"
+subject: "Price Drop Yo!"
+# Checking period in seconds
+checkingPeriod: 7200
+# Articles
+articles:
+- url: "https://www.amazon.com/.../article1"
+  threshold_price: 35
+- url: "https://www.amazon.com/.../article2"
+  threshold_price: 155.50

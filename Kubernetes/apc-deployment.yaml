@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apc-deployment
+  labels:
+    app: apc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apc
+  template:
+    metadata:
+      labels:
+        app: apc
+    spec:
+      containers:
+        - name: apc
+          image: olibob/apc:latest
+          volumeMounts:
+          - name: config-volume
+            mountPath: /app/config.yaml
+            subPath: config.yaml
+      volumes:
+        - name: config-volume
+          configMap:
+            name: apc-config
