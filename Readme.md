@@ -38,7 +38,7 @@ For the user agent string, simply open your browser and google "what's my user a
 
 ## Usage
 
-In standalone mode, the checking period is set by default to 7200 seconds (2 hours).
+In the sample configuration, the checking period is set by default to 7200 seconds (2 hours). No need to get crasy about timing, deals usually last an entire day.
 
 Run:
 
