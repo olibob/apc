@@ -36,8 +36,8 @@ class APC:
       standard_price = soup.find(id='price_inside_buybox')
       deal_price = soup.find(id='priceblock_dealprice')
       if standard_price:
-        price = convert_to_float(standard_price)
+        price = convert_to_float(standard_price.get_text())
       if deal_price:
-        price = convert_to_float(deal_price)
+        price = convert_to_float(deal_price.get_text())
       item = soup.find(id='productTitle').get_text().strip()
       return {'price': price, 'name': item}
