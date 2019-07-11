@@ -1,6 +1,6 @@
-from orapc import APC
-import orutils
-import ormail
+from apc.check import APC
+import helpers.configuration
+import helpers.email as mail
 import time
 from datetime import datetime
 import logging
@@ -10,7 +10,7 @@ logging.basicConfig(format='%(levelname)s - %(message)s', level=logging.INFO)
 log = logging.getLogger(__name__)
 
 # Load configuration
-config = orutils.get_config()
+config = helpers.configuration.read()
 apc = APC(config['userAgent'])
 
 while True:
@@ -20,7 +20,7 @@ while True:
     if currentItem != None: 
       if currentItem['price'] < float(item['thresholdPrice']):
         log.info(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Price change detected")
-        message = ormail.create_multipart_message(
+        message = mail.create_multipart_message(
           config['sender'],
           config['receiver'],
           config['subject'],
@@ -29,7 +29,7 @@ while True:
           item['thresholdPrice'],
           item['url']
           )
-        ormail.send_email(
+        mail.send(
           config['login'],
           config['password'],
           config['sender'],

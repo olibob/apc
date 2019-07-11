@@ -1,7 +1,7 @@
 import requests
 from requests.exceptions import HTTPError
 from bs4 import BeautifulSoup
-from orutils import convert_to_float
+from helpers.conversion import convert_to_float
 import logging
 
 log = logging.getLogger(__name__)

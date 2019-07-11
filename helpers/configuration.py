@@ -3,7 +3,7 @@ import logging
 
 log = logging.getLogger(__name__)
 
-def get_config():
+def read():
   """Reads yaml configuration file and return configuration object"""
 
   yaml = ruamel.yaml.YAML()
@@ -14,8 +14,3 @@ def get_config():
     except ruamel.yaml.scanner.ScannerError as exc:
       log.error(exc)
   return config
-
-def convert_to_float(priceText):
-  """Removes html withe space code (&nbsp;) and convert comma(,) to dot(.) to allow casting to float"""
-  number = priceText.get_text().strip().replace('\xa0€', '').replace(',', '.')
-  return float(number)

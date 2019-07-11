@@ -2,7 +2,7 @@ import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-def send_email(login, password, sender, receiver, msg):
+def send(login, password, sender, receiver, msg):
   """Sends email securely through gmail""" 
   
   SSLPort = 465
