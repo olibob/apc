@@ -1,5 +1,7 @@
 # Amazon price checker (APC)
 
+[![Build Status](https://travis-ci.com/olibob/apc.svg?branch=master)](https://travis-ci.com/olibob/apc)
+
 APC is just a little script I decided to play with after seeing a [youtube video from Dev Ed](https://youtu.be/Bg9r_yLk7VY). Nothing serious.
 
 It allows to check the price on amazon articles based on their URL and a threshold price. If the article price drops below the threshold price, your receive and email alerting you that it is time to burn money ;-)
